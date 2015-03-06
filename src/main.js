@@ -103,7 +103,8 @@
       },
       loadGif: function() {
         var gifSrc = this.getGif();
-        this.innerHTML = '<img class="x-giphy-image" src=' + gifSrc + '>';
+        this.innerHTML =  '<img class="x-giphy-image" src=' + gifSrc + '>';
+        this.innerHTML += '<img class="giphy-logo" src="../src/giphy.png">';
       },
       getGif: function() {
         this.i = this.random ? idx = Math.floor(Math.random() * this.gifs.length) : 0;

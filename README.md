@@ -1,5 +1,6 @@
 # About Giphy Image
-A x-tag web component that uses the Giphy API.
+A x-tag web component that consumes the Giphy API[https://github.com/Giphy/GiphyAPI].
+
 
 # Example
 
@@ -9,6 +10,8 @@ A x-tag web component that uses the Giphy API.
 <x-giphy-image type="trending"></x-giphy-image>
 <x-giphy-image type="random" term="futurama"></x-giphy-image>
 ```
+
+# Attributes
 
 `types`:
   *  `translate`
