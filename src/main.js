@@ -7,12 +7,11 @@
   		created: function(){
         this.apiUrl = 'http://api.giphy.com/v1/gifs/';
         this.apiKey = 'dc6zaTOxFJmzC';
-        this.rating = this.rating || 'r';
-        this.term = encodeURIComponent(this.term) || false;
-        this.gifs = [];
-        this.i = 0;
         this.fetchGifs();
-  		}
+  		},
+      attributeChanged: function(){
+        this.fetchGifs();
+      }
   	},
   	events: {
       click: function() { //load next image.
@@ -41,6 +40,10 @@
     },
   	methods: {
       fetchGifs: function() {
+        this.rating = this.rating || 'r';
+        this.term = encodeURIComponent(this.term) || false;
+        this.gifs = [];
+        this.i = 0;
         url = this.buildRequestUrl();
         this.makeRequest(url);
       },
