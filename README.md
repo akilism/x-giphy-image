@@ -15,10 +15,10 @@ See it in action at [x-giphy-image](http://www.wolvesintheserverroom.com/xgiphyi
 # Attributes
 
 `type`:
-  *  `translate`
-  *  `search`
-  *  `trending`
-  *  `random`
+  *  translate
+  *  search
+  *  trending
+  *  random
 
 
 `term`: Search term, translate term or tag to filter random results by. Does not apply to trending type.
