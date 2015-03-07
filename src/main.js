@@ -40,8 +40,7 @@
     },
   	methods: {
       fetchGifs: function() {
-        this.rating = this.rating || 'r';
-        this.term = encodeURIComponent(this.term) || false;
+        this.apiRating = this.rating || 'r';
         this.gifs = [];
         this.i = 0;
         url = this.buildRequestUrl();
@@ -61,22 +60,22 @@
       },
       getSearchUrl: function() {
         if(this.term) {
-          return this.apiUrl + 'search?api_key=' + this.apiKey + '&q=' + this.term + '&rating=' + this.rating;
+          return this.apiUrl + 'search?api_key=' + this.apiKey + '&q=' + encodeURIComponent(this.term) + '&rating=' + this.apiRating;
         }
       },
       getTranslateUrl: function() {
         if(this.term) {
-          return this.apiUrl + 'translate?api_key=' + this.apiKey + '&s=' + this.term + '&rating=' + this.rating;
+          return this.apiUrl + 'translate?api_key=' + this.apiKey + '&s=' + encodeURIComponent(this.term) + '&rating=' + this.apiRating;
         }
       },
       getTrendingUrl: function() {
-        return this.apiUrl + 'trending?api_key=' + this.apiKey + '&rating=' + this.rating;
+        return this.apiUrl + 'trending?api_key=' + this.apiKey + '&rating=' + this.apiRating;
       },
       getRandomUrl: function() {
         if(this.term) {
-          return this.apiUrl + 'random?api_key=' + this.apiKey + '&tag=' + this.term + '&rating=' + this.rating;
+          return this.apiUrl + 'random?api_key=' + this.apiKey + '&tag=' + encodeURIComponent(this.term) + '&rating=' + this.apiRating;
         } else {
-          return this.apiUrl + 'random?api_key=' + this.apiKey + '&rating=' + this.rating;
+          return this.apiUrl + 'random?api_key=' + this.apiKey + '&rating=' + this.apiRating;
         }
       },
       makeRequest: function(url) {
